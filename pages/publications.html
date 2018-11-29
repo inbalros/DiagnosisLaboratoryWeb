@@ -1,0 +1,147 @@
+<style type="text/css">
+    p {
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        margin: 15px 0;
+    }
+
+    p a {
+        /*border-bottom: 1px dashed #ccc;*/
+    }
+    p a:hover {
+        color: #337ab7;
+        /*text-decoration: underline;*/
+        border-bottom: 1px dashed #ccc;
+    }
+
+    .btnghost {
+        margin-top: 0;
+    }
+
+    .clear {
+        margin-top: 120px;
+    }
+
+    .rpeople {
+        margin-bottom: 50px;
+    }
+
+    h3 small {
+        text-transform: capitalize;
+    }
+    ul.teaching > li {
+        font-size: 20px;
+    }
+    .clear-l {
+        padding-top: 50px;
+    }
+    a.disabled {
+        color: #626262;
+        cursor: not-allowed;
+    }
+    .crossLine {
+        text-decoration: line-through;
+    }
+    .years_filter{
+      cursor:pointer;
+    }
+
+</style>
+<div class="container content-section " ng-init="init()">
+
+    <modal title="Login form" visible="showModal">
+        <p>{{abstract}}</p>
+    </modal>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <h1>Publications</h1>
+            <hr>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+
+            <div id="custom-search-input">
+
+                <div class="input-group col-md-12 ">
+
+                    <input ng-model="searchPublication" type="text" class="search-query form-control input-lg" placeholder="Search publications"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="button">
+                            <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>
+                <span ng-repeat="year in years |orderBy: year ">
+                    <span class="years_filter" id="{{year}}" ng-click="fliter_year(year)">{{year}}</span>
+                    |
+                </span>
+                <span style="cursor:pointer" ng-click="fliter_year('All')">All</span>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="clear-l"></div>
+
+    <div ng-repeat="publication in filterList | filter: searchPublication " class="row ">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <p class="reference">{{publication.authors}}<span ng-if="publication.authors">.</span> ({{publication.year}})<span ng-if="publication.year">.</span>
+                    <i>{{ publication.name }}</i>,
+                    {{publication.publish}} <span ng-if="publication.type">-</span>  {{publication.type}}
+
+                <span ng-if="publication.link"><a title="paper"  href="{{publication.link}}" target="_blank"><i
+                        class="fa fa-1.5x fa-file-text"></i></a></span>
+
+                <span ng-if="publication.bibtex">
+                    <button type="button" data-target="#bibDialog" data-toggle="modal"
+                            style=" background-color: Transparent;background-repeat:no-repeat;border: none;"
+                            ng-click="setBib(publication.bibtex)">
+                    <img src="img/bib.png" style="height:25px;width:25px;">
+                    </button>
+                </span>
+
+                   <!-- <img class="img-responsive" src="img/profile/roni.jpg">-->
+                </p>
+            </div>
+            <div class="col-lg-2"></div>
+
+        </div>
+<div style="padding-top: 30px;"></div>
+
+</div>
+
+</div>
+
+<div class="modal fade" id="bibDialog" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+            </div>
+            <div class="modal-body">
+                <h3>
+                    BibTex:
+                </h3>
+                <div style="font-size: 18px;">
+                       {{dialogBibtex }}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

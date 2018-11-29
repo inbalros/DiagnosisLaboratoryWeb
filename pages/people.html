@@ -1,0 +1,445 @@
+<style type="text/css">
+    p {
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        margin: 15px 0;
+    }
+
+    p a {
+        /*border-bottom: 1px dashed #ccc;*/
+    }
+    p a:hover {
+        color: #337ab7;
+        /*text-decoration: underline;*/
+        border-bottom: 1px dashed #ccc;
+    }
+
+    .btnghost {
+        margin-top: 0;
+    }
+
+    .clear {
+        margin-top: 120px;
+    }
+
+    .rpeople {
+        margin-bottom: 50px;
+    }
+
+    h3 small {
+        text-transform: capitalize;
+    }
+
+    .img-responsive{
+        width:300px;
+        height:300px;
+    }
+
+</style>
+<div class="container content-section ">
+    <h1>people</h1>
+    <hr>
+
+
+    <div class="row">
+    <div class="col-lg-5">
+        <div class="row">
+            <h3>
+                <a target="_blank" href="http://www.ise.bgu.ac.il/faculty/kalech/">
+                    DR. meir kalech</a>
+            </h3>
+        </div>
+
+    <div class="row">
+                <img class="img-responsive" src="img/profile/meir.jpg">
+        </div>
+
+    <div class="row">
+            <p>
+                <a target="_blank" href="http://in.bgu.ac.il/engn/sise/Pages/default.aspx">
+                    Department of Software & Information Systems Engineering</a><br>
+                <a target="_blank" href="http://in.bgu.ac.il/engn/Pages/default.aspx">
+                    Faculty of Engineering Sciences
+                </a><br>
+                <a target="_blank" href="http://in.bgu.ac.il/Pages/default.aspx">
+                    Ben-Gurion University of the Negev</a>
+
+            </p>
+            <p>
+                <a href="mailto:kalech@bgu.ac.il" target="_blank">
+                    <i class="fa fa-2x fa-envelope-o "></i> kalech@bgu.ac.il </a>
+            </p>
+
+            <p>
+                <strong>Phone</strong>: 08-6472239
+            </p>
+            <p>
+                Distributed system requires sub-systems to coordinate with each other to achieve a joint goal. However, in reality this coordination sometimes fails.
+                <br>
+                The goal of my research is to make sure that if any coordination failures arise, we will be able to detect the failures and diagnose the reasons for them. My work combines Model-Based Diagnosis (MBD) principles and Distributed Constraints Satisfaction (DisCSP) algorithms in Multi-Robot Systems.
+            </p>
+            <!--<div btf-markdown="aboutKobi">-->
+
+            <br>
+            <ul class="list-inline banner-social-buttons">
+                <li>
+                    <a href="https://scholar.google.com/citations?user=vo5iW3wAAAAJ&hl=iw" class="btn btnghost btn-lg" target="_blank">
+                        <i class="fa fa-2x fa-google"></i>
+                        Scholar</a>
+                </li>
+                <li>
+
+                    <a href="https://dblp.uni-trier.de/pers/hd/k/Kalech:Meir" class="btn btnghost btn-lg" target="_blank">
+                        <i class="fa fa-2x fa-graduation-cap"></i>
+                        dblp</a>
+                </li>
+
+                <li>
+
+                    <a href="http://www.ise.bgu.ac.il/faculty/kalech/Resume_english.pdf" class="btn btnghost btn-lg" target="_blank">
+                        <i class="fa fa-2x fa-file-text"></i>
+                        CV</a>
+                </li>
+
+
+            </ul>
+
+    </div>
+
+</div>
+
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-5">
+        <div class="row">
+            <h3>
+                <a target="_blank" href="https://ronistern.wixsite.com/home">
+                    DR. Roni Stern</a>
+            </h3>
+        </div>
+
+        <div class="row">
+                <img class="img-responsive" src="img/profile/roni.jpg">
+        </div>
+
+        <div class="row">
+            <p>
+                <a target="_blank" href="http://in.bgu.ac.il/engn/sise/Pages/default.aspx">
+                    Department of Software & Information Systems Engineering</a><br>
+                <a target="_blank" href="http://in.bgu.ac.il/engn/Pages/default.aspx">
+                    Faculty of Engineering Sciences
+                </a><br>
+                <a target="_blank" href="http://in.bgu.ac.il/Pages/default.aspx">
+                    Ben-Gurion University of the Negev</a>
+
+            </p>
+            <p>
+                <a href="mailto:roni.stern@gmail.com" target="_blank">
+                    <i class="fa fa-2x fa-envelope-o "></i> roni.stern@gmail.com </a>
+            </p>
+
+            <p>
+                <strong>Phone</strong>: 074-7795114
+            </p>
+            <p>
+                I enjoy almost anything that has to do with Artificial Intelligence, but mostly work on heuristic search, multi-agent planning, automated diagnosis, and using AI for improved patient-provider communication
+            </p>
+            <!--<div btf-markdown="aboutKobi">-->
+
+            <br>
+            <ul class="list-inline banner-social-buttons">
+                <li>
+                    <a href="https://scholar.google.com/citations?user=vQG9AkQAAAAJ" class="btn btnghost btn-lg" target="_blank">
+                        <i class="fa fa-2x fa-google"></i>
+                        Scholar</a>
+                </li>
+                <li>
+
+                    <a href="https://dblp.org/pers/hd/s/Stern:Roni" class="btn btnghost btn-lg" target="_blank">
+                        <i class="fa fa-2x fa-graduation-cap"></i>
+                        dblp</a>
+                </li>
+
+                <li>
+
+                    <a href="https://ronistern.wixsite.com/home/resume" class="btn btnghost btn-lg" target="_blank">
+                        <i class="fa fa-2x fa-file-text"></i>
+                        CV</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+    </div>
+    
+<hr>
+
+    <div ng-if="people.PhD.length" class="row">
+        <h2>PhD students</h2>
+        <hr>
+    </div>
+    <div class="row rpeople" ng-repeat="peoples in people.PhD | orderBy:'firstName' | orderBy : '-rank'| chunkBy:4">
+
+        <div class="col-md-3 text-center person"
+             ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-rank'">
+            <!--<div class="thumbnail">-->
+            <img class="img-responsive"  ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+
+            <div class="caption">
+                <h3>
+                    <!--Website Exists-->
+                    <a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+                    <!--No Website-->
+                    <span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+                    <small>{{p.rank}}</small>
+                </h3>
+
+                <p ng-if="p.about" class="about">{{p.about}}
+                    <button data-toggle="modal" data-target="#orderSaved"
+                            style="border:none; text-decoration: underline; background-color: Transparent; padding: 2px 10px; font-family: cursive;  color: darkblue"
+                            ng-click="setAbout(p.firstName,  p.lastName, p.longAbout)">read more</button>
+                </p>
+
+                <ul class="list-inline">
+                    <!--linkedin-->
+                    <li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+                            class="fa fa-2x fa-linkedin-square"></i></a></li>
+                    <!--scholar-->
+                    <li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+                            class="fa fa-2x fa-graduation-cap"></i></a></li>
+                    <!--github-->
+                    <li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+                            class="fa fa-2x fa-github-square"></i></a></li>
+                    <!--twitter-->
+                    <li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+                            class="fa fa-2x fa-twitter-square"></i></a></li>
+                    <!--facebook-->
+                    <li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+                            class="fa fa-2x fa-facebook-square"></i></a></li>
+                    <!--mail-->
+                    <li ng-if="p.mail"><a href="mailto:{{p.mail}}" target="_blank">
+                        <i class="fa fa-2x fa-envelope-o "></i></a></li>
+
+                    <!--Thesis-->
+                    <li ng-if="p.thesis"><a title="Thesis"  href="{{p.thesis}}" target="_blank"><i
+                            class="fa fa-2x fa-file-text "></i></a></li>
+                </ul>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+
+    <div ng-if="people.MSc.length" class="row">
+        <h2>MSc students</h2>
+        <hr>
+    </div>
+    <div class="row" ng-repeat="peoples in people.MSc | orderBy:'firstName' | orderBy : '-rank'| chunkBy:4">
+
+        <div class="col-md-3 text-center person"
+             ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-rank'">
+            <!--<div class="thumbnail">-->
+            <a ng-if="p.website" href="{{p.website}}">
+                <img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+            </a>
+            <img ng-if="!p.website" class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+
+            <div class="caption">
+                <h3>
+                    <!--Website Exists-->
+                    <a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+                    <!--No Website-->
+                    <span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+                    <small>{{p.rank}}</small>
+                </h3>
+
+                <p ng-if="p.about" class="about">{{p.about}}
+                    <button data-toggle="modal" data-target="#orderSaved"
+                            style="border:none; text-decoration: underline; background-color: Transparent; padding: 2px 10px; font-family: cursive;  color: darkblue"
+                            ng-click="setAbout(p.firstName,  p.lastName, p.longAbout)">read more</button>
+                </p>
+
+                <ul class="list-inline">
+                    <!--linkedin-->
+                    <li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+                            class="fa fa-2x fa-linkedin-square"></i></a></li>
+                    <!--scholar-->
+                    <li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+                            class="fa fa-2x fa-graduation-cap"></i></a></li>
+                    <!--github-->
+                    <li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+                            class="fa fa-2x fa-github-square"></i></a></li>
+                    <!--twitter-->
+                    <li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+                            class="fa fa-2x fa-twitter-square"></i></a></li>
+                    <!--facebook-->
+                    <li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+                            class="fa fa-2x fa-facebook-square"></i></a></li>
+                    <!--mail-->
+                    <li ng-if="p.mail"><a href="mailto:{{p.mail}}" target="_blank"><i
+                            class="fa fa-2x fa-envelope-o "></i></a></li>
+
+                    <!--Thesis-->
+                    <li ng-if="p.thesis"><a title="Thesis"  href="{{p.thesis}}" target="_blank"><i
+                            class="fa fa-2x fa-file-text "></i></a></li>
+                </ul>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+
+
+    <div class="clear"></div>
+
+
+    <div ng-if="people.BSc.length" class="row">
+    <h2>BSc students</h2>
+    <hr>
+</div>
+<div class="row" ng-repeat="peoples in people.BSc | orderBy:'firstName' | orderBy : '-rank'| chunkBy:4">
+
+    <div class="col-md-3 text-center person"
+         ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-rank'">
+        <!--<div class="thumbnail">-->
+        <a ng-if="p.website" href="{{p.website}}">
+            <img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+        </a>
+        <img ng-if="!p.website" class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+
+        <div class="caption">
+            <h3>
+                <!--Website Exists-->
+                <a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+                <!--No Website-->
+                <span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+                <small>{{p.rank}}</small>
+            </h3>
+
+            <p ng-if="p.about" class="about">{{p.about}}
+                <button data-toggle="modal" data-target="#orderSaved"
+                        style="border:none; text-decoration: underline; background-color: Transparent; padding: 2px 10px; font-family: cursive;  color: darkblue"
+                        ng-click="setAbout(p.firstName,  p.lastName, p.longAbout)">read more</button>
+            </p>
+
+            <ul class="list-inline">
+                <!--linkedin-->
+                <li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+                        class="fa fa-2x fa-linkedin-square"></i></a></li>
+                <!--scholar-->
+                <li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+                        class="fa fa-2x fa-graduation-cap"></i></a></li>
+                <!--github-->
+                <li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+                        class="fa fa-2x fa-github-square"></i></a></li>
+                <!--twitter-->
+                <li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+                        class="fa fa-2x fa-twitter-square"></i></a></li>
+                <!--facebook-->
+                <li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+                        class="fa fa-2x fa-facebook-square"></i></a></li>
+                <!--mail-->
+                <li ng-if="p.mail"><a href="mailto:{{p.mail}}" target="_blank"><i
+                        class="fa fa-2x fa-envelope-o "></i></a></li>
+
+                <!--Thesis-->
+                <li ng-if="p.thesis"><a title="Thesis"  href="{{p.thesis}}" target="_blank"><i
+                        class="fa fa-2x fa-file-text "></i></a></li>
+            </ul>
+        </div>
+        <!--</div>-->
+    </div>
+</div>
+
+
+    <div class="clear"></div>
+
+
+    <div ng-if="people.alumni.length" class="row">
+        <h2>Alumni</h2>
+        <hr>
+    </div>
+    <div class="row" ng-repeat="peoples in people.alumni | orderBy:'firstName' | orderBy : '-rank'| chunkBy:4">
+
+        <div class="col-md-3 text-center person"
+             ng-repeat="p in peoples | orderBy:'firstName' | orderBy : '-rank'">
+            <!--<div class="thumbnail">-->
+            <a ng-if="p.website" href="{{p.website}}">
+                <img class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+            </a>
+            <img ng-if="!p.website" class="img-responsive" ng-src="{{p.img}}" alt="{{p.firstName}}" title="{{p.firstName}}">
+
+            <div class="caption">
+                <h3>
+                    <!--Website Exists-->
+                    <a ng-if="p.website" href="{{p.website}}">{{p.firstName + " " + p.lastName}}<br></a>
+                    <!--No Website-->
+                    <span ng-if="!p.website">{{p.firstName + " " + p.lastName}}<br></span>
+                    <small>{{p.rank}}</small>
+                </h3>
+
+                <p ng-if="p.about" class="about">{{p.about}}
+                    <button data-toggle="modal" data-target="#orderSaved"
+                            style="border:none; text-decoration: underline; background-color: Transparent; padding: 2px 10px; font-family: cursive;  color: darkblue"
+                            ng-click="setAbout(p.firstName,  p.lastName, p.longAbout)">read more</button>
+                </p>
+                <ul class="list-inline">
+                    <!--linkedin-->
+                    <li ng-if="p.linkedin"><a href="{{p.linkedin}}" target="_blank"><i
+                            class="fa fa-2x fa-linkedin-square"></i></a></li>
+                    <!--scholar-->
+                    <li ng-if="p.scholar"><a href="{{p.scholar}}" target="_blank"><i
+                            class="fa fa-2x fa-graduation-cap"></i></a></li>
+                    <!--github-->
+                    <li ng-if="p.github"><a href="{{p.github}}" target="_blank"><i
+                            class="fa fa-2x fa-github-square"></i></a></li>
+                    <!--twitter-->
+                    <li ng-if="p.twitter"><a href="{{p.twitter}}" target="_blank"><i
+                            class="fa fa-2x fa-twitter-square"></i></a></li>
+                    <!--facebook-->
+                    <li ng-if="p.facebook"><a href="{{p.facebook}}" target="_blank"><i
+                            class="fa fa-2x fa-facebook-square"></i></a></li>
+                    <!--mail-->
+                    <li ng-if="p.mail"><a href="mailto:{{p.mail}}" target="_blank"><i
+                            class="fa fa-2x fa-envelope-o "></i></a></li>
+
+                    <!--Thesis-->
+                    <li ng-if="p.thesis"><a title="Thesis"  href="{{p.thesis}}" target="_blank"><i
+                            class="fa fa-2x fa-file-text "></i></a></li>
+                </ul>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+
+</div>
+
+<div class="modal fade" id="orderSaved" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="caption">
+                    <h3>
+
+                        {{dialogFirstName + " " + dialogLastName}}<br>
+                    </h3>
+                    <p class="about">{{dialoglongAbout}}</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

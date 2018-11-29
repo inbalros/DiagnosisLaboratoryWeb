@@ -1,0 +1,130 @@
+<style type="text/css">
+    p {
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        margin: 15px 0;
+    }
+
+    h3 a {
+        border-bottom: 1px dashed #ccc;
+    }
+    h3 a:hover {
+        color: #337ab7;
+        /* text-decoration: underline; */
+        border-bottom: 1px dashed #ccc;
+    }
+
+    .btnghost {
+        margin-top: 0;
+    }
+
+    .clear {
+        margin-top: 120px;
+    }
+
+    .rpeople {
+        margin-bottom: 50px;
+    }
+
+    h3 small {
+        text-transform: capitalize;
+    }
+    ul.teaching > li {
+        font-size: 20px;
+    }
+
+    .img-responsive{
+        width:600px;
+        height:400px;
+    }
+
+</style>
+<div class="container content-section ">
+    <h1>Projects</h1>
+    <hr>
+
+    <div class="project" ng-repeat="project in projects |  orderBy : ['name']">
+        <div style="padding-top:20px" class="row col-lg-12">
+            <span>
+                <h3>{{project.name}}</h3>
+            </span>
+        </div>
+        <div ng-if="project.peopleOnTheProject" class="row col-lg-12">
+            <p>
+                {{project.peopleOnTheProject}}
+            <p>
+            <p ng-if="project.jointName && !project.jointLink" class="row col-lg-12">
+                {{project.jointName}}
+            <p>
+            <p ng-if="project.jointName && project.jointLink" class="row col-lg-12">
+            <a target="_blank" href={{project.jointLink}}>
+                {{project.jointName}}</a>
+            <p>
+        </div>
+                <div ng-if="project.description && !project.image" class="row col-lg-12">
+                    <p>Description:
+                        <i>{{project.description}}</i>
+                    <p>
+                </div>
+
+            <div ng-if="project.description && project.image">
+                <div class="row col-lg-6">
+                    <p>Description:
+                        <i>{{project.description}}</i>
+                    <p>
+                </div>
+                <div class="row col-lg-1"/>
+                <div class="row col-lg-5">
+                    <img class="img-responsive"  ng-src="{{project.image}}" alt="{{project.name}}" title="{{project.name}}">
+                </div>
+            </div>
+
+        <div ng-if="project.supervisors" class="row col-lg-12">
+            <p>Supervisors:
+                <i>{{project.supervisors}}</i>
+            <p>
+        </div>
+
+        <div ng-if="project.completion_date" class="row col-lg-12">
+            <p>Completion Date:
+                <i>{{project.completion_date}}</i>
+            <p>
+        </div>
+
+        <div ng-if="project.papersDisplay && project.papersDisplay.length > 0" class="row col-lg-12">
+            <p>Related Paperds:<p>
+            <div class="row col-lg-1"></div>
+            <p class="row col-lg-11">
+            <a ng-repeat="paper in project.papersDisplay" target="_blank" href={{paper.link}}>
+                    {{paper.title}}</a>
+            </p>
+        </div>
+
+        <p class="row col-lg-12"></p>
+        <div ng-if="project.publicationsDisplay && project.publicationsDisplay.length > 0" class="row col-lg-12">
+            <p>Related publications: <p>
+
+                <div class="row col-lg-1"></div>
+
+                <div class="row col-lg-11">
+                    <p ng-repeat="publication in project.publicationsDisplay" class="reference">{{publication.authors}}<span ng-if="publication.authors">.</span> ({{publication.year}})<span ng-if="publication.year">.</span>
+                    <i>{{ publication.name }}</i>,
+                    {{publication.publish}} <span ng-if="publication.type">-</span>{{publication.type}}</p>
+                 </div>
+
+        </div>
+
+        <!--<div class="row col-lg-12">
+            <a ng-if="project.projectWebsite" href="http://{{project.projectWebsite}}" class="btn btnghost btn-lg text-center" target="_blank">Project Website</a>
+
+            <a ng-if="project.personalWebsite" href="http://{{project.personalWebsite}}" class="btn btnghost btn-lg  text-center" target="_blank">Personal Website</a>
+
+            <a ng-if="project.presentation" href="http:{{project.presentation.fields.file.url}}" alt="{{project.presentation.title}}" class="btn btnghost btn-lg" target="_blank">
+
+                <i class="fa fa-download"></i>Presentation</a>
+        </div>-->
+
+    </div>
+</div>
